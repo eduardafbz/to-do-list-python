@@ -20,7 +20,7 @@ class TaskService:
     
     def update(self, id, title, description, completed):
         updatedAt = datetime.datetime.now()
-        return self.repository.update(id, title, description, completed)
+        return self.repository.update(id, title, description,updatedAt, completed)
     
     def delete_all(self):
         return self.repository.delete_all()
