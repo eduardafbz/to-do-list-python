@@ -1,4 +1,4 @@
-from model import Task
+from model.Task import Task
 
 class TaskRepository:
 
@@ -6,7 +6,7 @@ class TaskRepository:
         self.tasks = []
         self.current_id = 1
 
-    def add(self, title, description, createdAt, updatedAt, completed=False):
+    def add(self, title, description, createdAt, updatedAt, completed = False):
         task = Task(self.current_id, title, description, createdAt, updatedAt, completed)
         self.tasks.append(task)
         self.current_id += 1

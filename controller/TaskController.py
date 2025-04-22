@@ -1,4 +1,4 @@
-from service import TaskService
+from service.TaskService import TaskService
 
 class TaskController:
 

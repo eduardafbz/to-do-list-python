@@ -1,6 +1,6 @@
 import datetime
 from model import Task
-from repository import TaskRepository
+from repository.TaskRepository import TaskRepository
 
 class TaskService:
 
@@ -9,8 +9,8 @@ class TaskService:
         
     def add(self, title, description):
         createdAt = updatedAt = datetime.datetime.now() 
-        task = self.repository.add(task)
-        return Task(task)
+        task = self.repository.add(title = title, description = description, createdAt = createdAt, updatedAt = updatedAt, completed = False)
+        return task
     
     def get_all(self):
         return self.repository.get_all()
