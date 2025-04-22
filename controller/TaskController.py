@@ -1,6 +1,6 @@
 from service import TaskService
 
-class TaskControler:
+class TaskController:
 
     def __init__(self):
         self.service = TaskService
