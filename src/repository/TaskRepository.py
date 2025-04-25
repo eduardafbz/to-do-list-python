@@ -26,13 +26,13 @@ class TaskRepository:
         
     def update(self, id, title, description, updatedAt, completed):
         task = self.get_by_id(id)
-        if task:
-            task.title = title
-            task.description = description
-            task.updatedAt = updatedAt
-            task.completed = completed
-            return task
-        return None
+        if task is None:
+            return None
+        task.title = title
+        task.description = description
+        task.updatedAt = updatedAt
+        task.completed = completed
+        return task
     
     def deleteAll(self):
         return self.tasks.clear()
