@@ -5,7 +5,7 @@ class TaskController:
     def __init__(self):
         self.service = TaskService();
 
-    def run(self):
+    def start_task_menu(self):
         while True:
             print("\nMENU DE TAREFAS")
             print("1. Adicionar tarefa")
@@ -25,7 +25,7 @@ class TaskController:
                 print(f"Tarefa adicionada: {task}")
 
             elif choice == 2:
-                tasks = self.service.get_all()
+                tasks = self.service.findAll()
                 if tasks:
                     for task in tasks:
                         print(task)
@@ -34,7 +34,7 @@ class TaskController:
 
             elif choice == 3:
                 id = int(input("Digite o id: "))
-                task = self.service.get_by_id(id)
+                task = self.service.findById(id)
                 print(f"Tarefa de id {id}: {task}" if task else "Tarefa não encontrada.")
 
             elif choice == 4: 
@@ -51,12 +51,12 @@ class TaskController:
                     print(f"Tarefa atualizada." if task else "Tarefa não encontrada.")
 
             elif choice == 5:
-                self.service.delete_all()
+                self.service.deletAll()
                 print("Todas as tarefas foram excluídas.")
 
             elif choice == 6:
                 id = int(input("Digite o id da tarefa a ser excluída: "))
-                task = self.service.delete_by_id(id)
+                task = self.service.deleteById(id)
                 print(f"Tarefa de id {id} excluída." if task else "Tarefa não encontrada.")
             
             elif choice == 0:

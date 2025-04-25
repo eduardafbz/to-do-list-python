@@ -11,19 +11,19 @@ class TaskService:
         task = self.repository.add(title, description)
         return task
     
-    def get_all(self):
-        return self.repository.get_all()
+    def findAll(self):
+        return self.repository.findAll()
     
-    def get_by_id(self, id):
-        return self.repository.get_by_id(id)
+    def findById(self, id):
+        return self.repository.findById(id)
     
     def update(self, id, title, description, completed):
         updatedAt = datetime.datetime.now()
         return self.repository.update(id, title, description,updatedAt, completed)
     
-    def delete_all(self):
+    def deletAll(self):
         return self.repository.delete_all()
     
-    def delete_by_id(self, id):
-        return self.repository.get_by_id(id)
+    def deleteById(self, id):
+        return self.repository.deleteById(id)
 

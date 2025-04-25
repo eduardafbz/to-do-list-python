@@ -15,10 +15,10 @@ class TaskRepository:
         self.current_id += 1
         return task
     
-    def get_all(self):
+    def findAll(self):
         return self.tasks
     
-    def get_by_id(self, task_id: int):
+    def findById(self, task_id: int):
         for task in self.tasks:
             if task.id == task_id:
                 return task
@@ -34,10 +34,10 @@ class TaskRepository:
             return task
         return None
     
-    def delete_all(self):
+    def deleteAll(self):
         return self.tasks.clear()
     
-    def delete_by_id(self, task_id: int):
+    def deleteById(self, task_id: int):
         for position, task in enumerate(self.tasks):
             if task.id == task_id:
                 return self.tasks.pop(position)

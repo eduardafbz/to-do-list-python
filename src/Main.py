@@ -1,4 +1,4 @@
 from controller.TaskController import TaskController
 
 if __name__ == "__main__":
-    TaskController().run()
+    TaskController().start_task_menu()
