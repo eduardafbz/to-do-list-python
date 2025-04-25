@@ -3,7 +3,7 @@ from service.TaskService import TaskService
 class TaskController:
 
     def __init__(self):
-        self.service = TaskService
+        self.service = TaskService();
 
     def run(self):
         while True:
@@ -41,7 +41,7 @@ class TaskController:
                 id = int(input("Digite o id da tarefa a ser atualizada: "))
                 title = input("Digite o título da tarefa: ")
                 description = input("Digite a descrição: ")
-                completed = bool(input("Ela está completa?").lower)
+                completed = bool(input("Ela está completa? ").lower)
                 if completed == "sim":
                     completed = True
                 else:

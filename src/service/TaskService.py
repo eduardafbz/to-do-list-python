@@ -8,8 +8,7 @@ class TaskService:
         self.repository = TaskRepository()
         
     def add(self, title, description):
-        createdAt = updatedAt = datetime.datetime.now() 
-        task = self.repository.add(title = title, description = description, createdAt = createdAt, updatedAt = updatedAt, completed = False)
+        task = self.repository.add(title, description)
         return task
     
     def get_all(self):
